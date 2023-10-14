@@ -60,7 +60,7 @@
 
 {{-- technology look values are coming from technology lookup table --}}
 {{-- dropdown options to display all the technology options --}}
-<x-form.dropdown name="technology_lookup_id">
+<x-form.dropdown name="technology_lookup_id" selection_type="multiple">
     @foreach ($technology_lookups as $technology_lookup)
         {{-- if technology object exists then get the matching technology lookup value for Update --}}
         @if ($technology->exists)

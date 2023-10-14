@@ -146,5 +146,8 @@
         $('#sidebarCollapse').on('click', function() {
             $('#sidebar').toggleClass('active');
         });
+
+        //select2 script
+        $('.select2').select2();
     });
 </script>

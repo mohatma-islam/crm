@@ -34,7 +34,7 @@
 @endif
 
 {{-- dropdown to get client model data from database --}}
-<x-form.dropdown name="client_id">
+<x-form.dropdown name="client_id" selection_type="multiple">
     @foreach ($clients as $client)
         @if ($clientContact->exists)
             <option value="{{ $client->id }}"
