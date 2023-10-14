@@ -27,7 +27,7 @@
         @method('PATCH')
     @else
         {{-- If Technology data is not found then use POST method for create --}}
-        <form action="{{ route('technology.store') }}" method="POST">
+        <form action="{{ route('technology.store') }}" method="POST" id="technologFrom">
             @csrf
 @endif
 
@@ -60,22 +60,32 @@
 
 {{-- technology look values are coming from technology lookup table --}}
 {{-- dropdown options to display all the technology options --}}
-<x-form.dropdown name="technology_lookup_id" selection_type="multiple">
+{{-- <x-form.dropdown name="technology_lookup_id" selection_type="multiple">
     @foreach ($technology_lookups as $technology_lookup)
-        {{-- if technology object exists then get the matching technology lookup value for Update --}}
         @if ($technology->exists)
             <option value="{{ $technology_lookup->id }}"
                 {{ $technology_lookup->id == old('technology_lookup_id', $technology->technology_lookup->id) ? 'selected' : '' }}>
                 {{ $technology_lookup->value }}
             </option>
         @else
-        {{-- if technology object does exists then get the old user input technology lookup value for Create --}}
             <option value="{{ $technology_lookup->id }}" {{ $technology_lookup->id == old('technology_lookup_id') ? 'selected' : '' }}>
                 {{ $technology_lookup->value }}
             </option>
         @endif
     @endforeach
-</x-form.dropdown>
+</x-form.dropdown> --}}
+
+<select class="form-select select2" name="technology_lookup_id[]" id="technology_lookup_id" multiple>
+    <option value="">Please Select</option>
+    @foreach ($technology_lookups as $technology_lookup)
+        <option value="{{ $technology_lookup->id }}" 
+        {{ in_array($technology_lookup->id, old('technology_lookup_id', [])) ? 'selected' : '' }}>
+        {{ $technology_lookup->value }}
+        </option>
+    @endforeach
+</select>
+
+
 
 <x-form.button :model="$technology" />
 
