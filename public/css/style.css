@@ -1,0 +1,117 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+    margin-bottom: 10%;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li button {
+    padding: 10px;
+    margin-left: 2px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li button:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar.active{
+    margin-left: -250px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+/* ---------------------------------------------------
+    NAVLINKS STYLE
+----------------------------------------------------- */
+
+.active {
+    background-color: #4563eb;
+    /* border-radius: 25px; */
+}
+
+/* ---------------------------------------------------
+    TABLE STYLE
+----------------------------------------------------- */
+
+th a {
+    text-decoration: none;
+    color: black;
+}
+
+td a {
+    text-decoration: none;
+}
